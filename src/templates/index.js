@@ -11,6 +11,9 @@ import orderItemRefundTemplate from "./orders/itemRefund.js";
 import sendEmailOTPTemplate from "./accounts/otpEmail.js";
 import generatedQuoteEmail from "./accounts/generatedQuoteEmail.js";
 
+//orders
+import customOrderTemplate from "./orders/CustomOrder/customOrder.js";
+
 export default [
   /*
    * Default email templates
@@ -156,5 +159,18 @@ export default [
     name: "orders/itemRefund",
     template: orderItemRefundTemplate,
     subject: "{{shop.name}}: Refund confirmation - {{order.referenceId}}",
+  },
+
+  /*
+   * Order - Custom Order Placed
+   * When: user Places a custom order
+   
+   */
+  {
+    language: "en",
+    title: "Orders - Custom Order",
+    name: "orders/custom",
+    template: customOrderTemplate,
+    subject: "You have received a custom order request",
   },
 ];
